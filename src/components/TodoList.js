@@ -2,7 +2,7 @@ export default function TodoList(list) {
   console.log(list);
   const itemComponent = (item) => {
     return `
-    <div data-phantom="${item}" id="todo-${item.id}" class="todo-list-item">
+    <div id="todo-${item.id}" class="todo-list-item">
       <h2>Todo List Item ${item.id}</h2>
       <p>${item.text}</p>
       <p>${item.completed ? "✅" : "❎"}</p>
