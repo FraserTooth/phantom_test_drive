@@ -34,9 +34,12 @@ function addItem(e) {
 function completeItem(e) {
   const itemId = e.target.id;
   const parentId = e.target.parentElement ? e.target.parentElement.id : "";
-  const regex = /todo-\d+/gm;
-  if (itemId.match(regex) || parentId.match(regex)) {
-    const id = parseInt(itemId.slice(5));
+  const regex = /todo-item-\d+/gm;
+  if (itemId.match(regex)) {
+    const id = parseInt(itemId.slice(10));
     fire({ type: "TOGGLE_TODO", id }); // fire an action to the store
+  } else if (parentId.match(regex)) {
+    const id = parseInt(parentId.slice(10));
+    fire({ type: "TOGGLE_TODO", id });
   }
 }
