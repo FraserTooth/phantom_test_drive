@@ -4,7 +4,7 @@ import reduxStore from "./store.js";
 import TodoList from "./components/TodoList.js";
 
 function phantomComponent() {
-  const { slices, todos } = data();
+  const { todos } = data();
   return `
     <input id="newItem"/>
     <button id="addItem">Add Item</button>
@@ -22,12 +22,13 @@ document.addEventListener("click", completeItem);
 function addItem(e) {
   const { todos } = data();
   const lastId = todos[todos.length - 1].id;
-  const text = document.getElementById("newItem").value;
+  const textBox = document.getElementById("newItem");
   fire({
     type: "ADD_TODO",
-    text,
+    text: textBox.value,
     id: lastId + 1,
   });
+  textBox.value = "";
 }
 
 function completeItem(e) {

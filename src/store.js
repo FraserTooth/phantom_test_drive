@@ -8,14 +8,10 @@ const data = {
       completed: false,
     },
   ],
-  slices: ["🍕", "🍕", "🍕"],
 };
 
 function reducer(state = data, action) {
   switch (action.type) {
-    case "EAT_SLICE":
-      // remove a slice from array
-      return { ...state, slices: state.slices.slice(0, -1) };
     case "ADD_TODO":
       return {
         ...state,
