@@ -33,8 +33,9 @@ function addItem(e) {
 
 function completeItem(e) {
   const itemId = e.target.id;
+  const parentId = e.target.parentElement ? e.target.parentElement.id : "";
   const regex = /todo-\d+/gm;
-  if (itemId.match(regex)) {
+  if (itemId.match(regex) || parentId.match(regex)) {
     const id = parseInt(itemId.slice(5));
     fire({ type: "TOGGLE_TODO", id }); // fire an action to the store
   }
