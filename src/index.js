@@ -1,11 +1,11 @@
 import phantom from "@sidiousvic/phantom";
 import reduxStore from "./store.js";
-import Pizza from "./components/Pizza.js";
+import TodoList from "./components/TodoList.js";
 
 function phantomComponent() {
-  const { slices } = data();
+  const { slices, todos } = data();
   return `
-    ${Pizza(slices)}
+    ${TodoList(todos)}
   `;
 }
 
