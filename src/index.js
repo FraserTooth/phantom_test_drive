@@ -1,7 +1,13 @@
 import phantom from "@sidiousvic/phantom";
 import reduxStore from "./store.js";
-import Pizza from "./components/phantomComponent.js";
+import Pizza from "./components/Pizza.js";
 
-export const { fire, data, launch } = phantom(reduxStore, Pizza);
+function phantomComponent() {
+  return `
+    ${Pizza()} // inject the Pizza component from above
+  `;
+}
+
+export const { fire, data, launch } = phantom(reduxStore, phantomComponent);
 
 launch(); // initial render

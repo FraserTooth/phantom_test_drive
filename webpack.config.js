@@ -10,7 +10,7 @@ module.exports = {
     app: "./src/index.js",
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".js"],
   },
   mode: "development",
   output: {
@@ -23,7 +23,7 @@ module.exports = {
     // hot: true
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    // minimizer: [new UglifyJsPlugin()],
   },
   plugins: [
     new HtmlWebpackPlugin({
