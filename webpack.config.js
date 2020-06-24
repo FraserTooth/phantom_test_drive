@@ -23,7 +23,7 @@ module.exports = {
     // hot: true
   },
   optimization: {
-    // minimizer: [new UglifyJsPlugin()],
+    minimizer: [new UglifyJsPlugin()],
   },
   plugins: [
     new HtmlWebpackPlugin({
