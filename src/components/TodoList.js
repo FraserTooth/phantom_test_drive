@@ -14,7 +14,7 @@ export default function TodoList(list) {
 
   return `
     <h1>Todo List</h1>
-    <div id="todo-list">
+    <div data-phantom="${list}" id="todo-list">
       ${list.map(itemComponent)}
 	  </div>
   `;
