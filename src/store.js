@@ -31,7 +31,7 @@ function reducer(state = data, action) {
     case "TOGGLE_TODO":
       return {
         ...state,
-        todos: state.todo.map((todo) =>
+        todos: state.todos.map((todo) =>
           todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
         ),
       };

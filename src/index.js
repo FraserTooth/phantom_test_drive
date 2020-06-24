@@ -17,6 +17,7 @@ export const { fire, data, launch } = phantom(reduxStore, phantomComponent);
 launch(); // initial render
 
 document.getElementById("addItem").addEventListener("click", addItem);
+document.addEventListener("click", completeItem);
 
 function addItem(e) {
   const { todos } = data();
@@ -27,4 +28,13 @@ function addItem(e) {
     text,
     id: lastId + 1,
   });
+}
+
+function completeItem(e) {
+  const itemId = e.target.id;
+  const regex = /todo-\d+/gm;
+  if (itemId.match(regex)) {
+    const id = parseInt(itemId.slice(5));
+    fire({ type: "TOGGLE_TODO", id }); // fire an action to the store
+  }
 }
