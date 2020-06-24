@@ -1,0 +1,12 @@
+.todo-list-item {
+  border: 1px solid red;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+body {
+  margin: 40px auto;
+  max-width: 650px;
+  font-size: 18px;
+  color: #444;
+}
